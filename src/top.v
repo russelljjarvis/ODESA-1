@@ -1,3 +1,5 @@
+/* verilator lint_off STMTDLY */
+/* verilator lint_off IMPLICIT */
 module top();
 parameter  p_lvl_1_dt = 15;
 parameter  p_lvl_2_dt = 7;
