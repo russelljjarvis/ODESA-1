@@ -1,6 +1,6 @@
 # ODESA
 
-![example workflow](https://github.com/russelljjarvis/ODESA-1/actions/workflows/build.yml/badge.svg)
+![https://github.com/russelljjarvis/ODESA-1/actions/workflows/build.yml](https://github.com/russelljjarvis/ODESA-1/actions/workflows/build.yml/badge.svg)
 
 
 <p align="center">
