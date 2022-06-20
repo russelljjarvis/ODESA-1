@@ -2,11 +2,8 @@
 
 <p align="center">
   <a href="#Description">Description</a> •
-  <a href="#Example-Outputs">Outputs</a> •
-  <a href="#Motivation">Motivation</a> •
-  <a href="#Install-the-Julia-module">Install</a> •
-  <a href="#Development-Plans">Plans</a> •
-  <a href="#Why-Not-Optimize-Small-SNNs-With-Bigger-SNNs">Why Not Optimize Small SNNs With Bigger SNNs</a>
+  <a href="#Verification">Verification</a> •
+  <a href="#TODO">TODO</a> •
 </p>
 
 ## Description 
