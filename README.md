@@ -1,5 +1,8 @@
 # ODESA
 
+![example workflow](https://github.com/russelljjarvis/ODESA-1/actions/workflows/build.yml/badge.svg)
+
+
 <p align="center">
   <a href="#Description">Description</a> •
   <a href="#Verification">Verification</a> •
@@ -11,7 +14,7 @@ FPGA implementation of the Odesa algorithm: a supervised spiking and time surfac
 
 ## Verification
 
-# In order to run verilator (cloud simulation verification).
+#### In order to run verilator (cloud simulation verification).
 
 `src/odesa.v` was copied into `src/top.v`
 
