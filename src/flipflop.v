@@ -1,6 +1,6 @@
 
-module flipflop 
-( 
+module flipflop
+(
 input   i_d,
 input   i_clk,
 input   i_clr,
@@ -16,7 +16,7 @@ always @(posedge i_clk or negedge ~i_clr)
 begin
 if(i_clr)
   r_q <= 0;
-else 
+else
   r_q <= i_d;
 end
 

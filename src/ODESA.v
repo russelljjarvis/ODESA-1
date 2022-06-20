@@ -1,4 +1,4 @@
-
+/* verilator lint_off EOFNEWLINE */
 module ODESA
 #(parameter p_width = 9)
 (

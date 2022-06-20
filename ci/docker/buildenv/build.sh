@@ -7,7 +7,7 @@
 # Version 2.0.
 # SPDX-License-Identifier: LGPL-3.0-only OR Artistic-2.0
 
-: "${REPO:=https://github.com/verilator/verilator}"
+: "${REPO:=https://github.com/russelljjarvis/ODESA-1}"
 : "${REV:=master}"
 : "${CC:=gcc}"
 : "${CXX:=g++}"

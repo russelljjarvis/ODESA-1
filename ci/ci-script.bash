@@ -30,14 +30,6 @@ fi
 if [ "$CI_OS_NAME" = "linux" ]; then
   export MAKE=make
   NPROC=$(nproc)
-elif [ "$CI_OS_NAME" = "osx" ]; then
-  export MAKE=make
-  NPROC=$(sysctl -n hw.logicalcpu)
-elif [ "$CI_OS_NAME" = "freebsd" ]; then
-  export MAKE=gmake
-  NPROC=$(sysctl -n hw.ncpu)
-else
-  fatal "Unknown os: '$CI_OS_NAME'"
 fi
 
 if [ "$CI_BUILD_STAGE_NAME" = "build" ]; then
@@ -50,14 +42,6 @@ if [ "$CI_BUILD_STAGE_NAME" = "build" ]; then
     ccache -z
     "$MAKE" -j "$NPROC" -k
     ccache -s
-    if [ "$CI_OS_NAME" = "osx" ]; then
-      file bin/verilator_bin
-      file bin/verilator_bin_dbg
-      md5 bin/verilator_bin
-      md5 bin/verilator_bin_dbg
-      stat bin/verilator_bin
-      stat bin/verilator_bin_dbg
-    fi
   else
     nodist/code_coverage --stages 0-2
   fi
@@ -67,27 +51,6 @@ elif [ "$CI_BUILD_STAGE_NAME" = "test" ]; then
 
   export VERILATOR_TEST_NO_CONTRIBUTORS=1  # Separate workflow check
 
-  if [ "$CI_OS_NAME" = "osx" ]; then
-    export VERILATOR_TEST_NO_GDB=1  # Pain to get GDB to work on OS X
-    # TODO below may no longer be requried as configure checks for -pg
-    export VERILATOR_TEST_NO_GPROF=1  # Apple Clang has no -pg
-    # export PATH="/Applications/gtkwave.app/Contents/Resources/bin:$PATH" # fst2vcd
-    file bin/verilator_bin
-    file bin/verilator_bin_dbg
-    md5 bin/verilator_bin
-    md5 bin/verilator_bin_dbg
-    stat bin/verilator_bin
-    stat bin/verilator_bin_dbg
-    # For some reason, the dbg exe is corrupted by this point ('file' reports
-    # it as data rather than a Mach-O). Unclear if this is an OS X issue or
-    # CI's. Remove the file and re-link...
-    rm bin/verilator_bin_dbg
-    "$MAKE" -j "$NPROC" -k
-  elif [ "$CI_OS_NAME" = "freebsd" ]; then
-    export VERILATOR_TEST_NO_GDB=1 # Disable for now, ideally should run
-    # TODO below may no longer be requried as configure checks for -pg
-    export VERILATOR_TEST_NO_GPROF=1 # gprof is a bit different on FreeBSD, disable
-  fi
 
   # Run sanitize on Ubuntu 20.04 only
   [ "$CI_RUNS_ON" = 'ubuntu-20.04' ] && [ "$CI_M32" = "" ] && sanitize='--sanitize' || sanitize=''
