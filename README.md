@@ -1,7 +1,6 @@
 # ODESA
 
-![https://github.com/russelljjarvis/ODESA-1/actions/workflows/build.yml](https://github.com/russelljjarvis/ODESA-1/actions/workflows/build.yml/badge.svg)
-
+![https://github.com/russelljjarvis/ODESA-1/actions](https://github.com/russelljjarvis/ODESA-1/actions/workflows/build.yml/badge.svg)
 
 <p align="center">
   <a href="#Description">Description</a> •
