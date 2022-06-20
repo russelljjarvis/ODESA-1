@@ -1,5 +1,3 @@
-/* verilator lint_off EOFNEWLINE */
-/*verilator lint_off*/
 module top();
 parameter  p_lvl_1_dt = 15;
 parameter  p_lvl_2_dt = 7;
