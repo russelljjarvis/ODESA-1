@@ -17,7 +17,7 @@ FPGA implementation of the Odesa algorithm: a supervised spiking and time surfac
 
 
 <p align="center">
-	<img src="[image](https://user-images.githubusercontent.com/53887767/174504252-cd42a9eb-fe8f-4900-8fdc-23cec215f9eb.png)" width="250" height="200">
+	<img src="https://user-images.githubusercontent.com/53887767/174504252-cd42a9eb-fe8f-4900-8fdc-23cec215f9eb.png" width="250" height="200">
 </p>
 
 
