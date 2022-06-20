@@ -25,7 +25,8 @@ understand that:
 
 2. The file .github/workflows/build.yml
 contains the second from final line:
-3. ```bash
+3. 
+```bash
 run: docker run -v ${PWD}/src:/work --user $(id -u):$(id -g) -e CCACHE_DIR=/work/.ccache --entrypoint make verilator/verilator:stable
 ```
 This docker command calls make on `src/Makefile` which then compiles the `cpp` code:
