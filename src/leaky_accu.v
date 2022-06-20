@@ -1,10 +1,11 @@
+/* verilator lint_off WIDTH */
 module leaky_accu
 #(
 parameter  p_base_width = 6
 )
 (
 input   i_clk,
-input   i_rst_n, 
+input   i_rst_n,
 input   i_event,
 output  o_clr,
 output  [p_base_width+2:0]  o_ln
@@ -15,23 +16,23 @@ reg  [p_base_width+2:0] r_counter;
 assign o_ln = r_counter;
 assign o_clr = r_clr;
 
-always @(posedge i_clk or negedge i_rst_n) 
-begin 
+always @(posedge i_clk or negedge i_rst_n)
+begin
   if(!i_rst_n)
-    begin	
+    begin
       r_counter <= 0;
 	  r_clr <= 1'b0;
-    end	  
+    end
   else
-    if(i_event) 
+    if(i_event)
 	  begin
-        r_counter <= r_counter + {p_base_width{1'b1}}; 
+        r_counter <= r_counter + {p_base_width{1'b1}};
 		r_clr <= 1'b1;
-	  end	
+	  end
     else if(r_counter > 0)
 	  begin
         r_counter <= r_counter - 1;
 		r_clr <= 1'b0;
 	  end
-end	
+end
 endmodule

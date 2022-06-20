@@ -1,4 +1,4 @@
-
+/* verilator lint_off IMPLICIT */
 module L2_train
 #(parameter p_width = 9)
 (

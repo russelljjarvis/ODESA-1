@@ -1,3 +1,4 @@
+/* verilator lint_off IMPLICIT */
 module ODESA
 #(parameter p_width = 9)
 (

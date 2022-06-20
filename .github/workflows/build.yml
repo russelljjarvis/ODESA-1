@@ -20,6 +20,5 @@ jobs:
       - name: Verilate
         run: docker run -v ${PWD}/src:/work --user $(id -u):$(id -g) -e CCACHE_DIR=/work/.ccache --entrypoint make verilator/verilator:stable
 
-
       - name: Publish
         run: bash <(curl -s https://codecov.io/bash)

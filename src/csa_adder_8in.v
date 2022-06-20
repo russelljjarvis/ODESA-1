@@ -1,3 +1,4 @@
+/* verilator lint_off WIDTH */
 module csa_adder_8in
 #(parameter p_input_width = 14)
 (

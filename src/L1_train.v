@@ -1,3 +1,4 @@
+/* verilator lint_off IMPLICIT */
 /*
 if there is an event, wait until an spike appears at the level outputs
 if there is no winner (spike) and GAS is active, punish all neurons of the level. else, reward the winner.
