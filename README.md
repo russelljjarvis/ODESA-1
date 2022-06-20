@@ -14,6 +14,10 @@ FPGA implementation of the Odesa algorithm: a supervised spiking and time surfac
 
 ## Verification
 
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/53887767/174504252-cd42a9eb-fe8f-4900-8fdc-23cec215f9eb.png" width="350" height="300">
+</p>
+
 #### In order to run verilator (cloud simulation verification).
 
 `src/odesa.v` was copied into `src/top.v`
@@ -26,11 +30,6 @@ run: docker run -v ${PWD}/src:/work --user $(id -u):$(id -g) -e CCACHE_DIR=/work
 This docker command calls make on `src/Makefile` which then compiles the `cpp` code:
 
 `src/sim_main.cpp` calls `src/top.v` (formerly odesa.v)
-
-
-<p align="center">
-	<img src="https://user-images.githubusercontent.com/53887767/174504252-cd42a9eb-fe8f-4900-8fdc-23cec215f9eb.png" width="250" height="200">
-</p>
 
 
 ### TODO:  
