@@ -1,6 +1,15 @@
 # ODESA
 
+<p align="center">
+  <a href="#Description">Description</a> •
+  <a href="#Verification">Verification</a> •
+  <a href="#TODO">TODO</a> •
+</p>
+
+## Description 
 FPGA implementation of the Odesa algorithm: a supervised spiking and time surface learning algorithm.
+
+## Verification
 
 # In order to run verilator (cloud simulation verification).
 
@@ -15,7 +24,10 @@ This docker command calls make on `src/Makefile` which then compiles the `cpp` c
 
 `src/sim_main.cpp` calls `src/top.v` (formerly odesa.v)
 
-![image](https://user-images.githubusercontent.com/53887767/174504252-cd42a9eb-fe8f-4900-8fdc-23cec215f9eb.png)
+
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/53887767/174504252-cd42a9eb-fe8f-4900-8fdc-23cec215f9eb.png" width="250" height="200">
+</p>
 
 
 ### TODO:  
@@ -24,3 +36,4 @@ This docker command calls make on `src/Makefile` which then compiles the `cpp` c
 - [ ] verilator GTK wave verification of SNN signals
 - [ ] Command line scripts lend themselves to automation, GUIs lend themselves to human intervention.
 - [ ] Command line installation and execution of Lattice Ice Breaker for a relatively small network.
+
