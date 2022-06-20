@@ -1,5 +1,7 @@
 # ODESA
 
+![https://github.com/russelljjarvis/ODESA-1/actions](https://github.com/russelljjarvis/ODESA-1/actions/workflows/build.yml/badge.svg)
+
 <p align="center">
   <a href="#Description">Description</a> •
   <a href="#Verification">Verification</a> •
@@ -11,23 +13,27 @@ FPGA implementation of the Odesa algorithm: a supervised spiking and time surfac
 
 ## Verification
 
-# In order to run verilator (cloud simulation verification).
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/53887767/174504252-cd42a9eb-fe8f-4900-8fdc-23cec215f9eb.png" width="350" height="300">
+</p>
 
-`src/odesa.v` was copied into `src/top.v`
+#### In order to run verilator (cloud simulation verification).
 
-The file .github/workflows/build.yml
+Steps:
+understand that:
+1. `src/odesa.v` was copied into `src/top.v`
+
+2. The file .github/workflows/build.yml
 contains the second from final line:
+3. 
 ```bash
 run: docker run -v ${PWD}/src:/work --user $(id -u):$(id -g) -e CCACHE_DIR=/work/.ccache --entrypoint make verilator/verilator:stable
 ```
 This docker command calls make on `src/Makefile` which then compiles the `cpp` code:
 
-`src/sim_main.cpp` calls `src/top.v` (formerly odesa.v)
+4. `src/sim_main.cpp` calls `src/top.v` (formerly odesa.v)
 
-
-<p align="center">
-	<img src="https://user-images.githubusercontent.com/53887767/174504252-cd42a9eb-fe8f-4900-8fdc-23cec215f9eb.png" width="250" height="200">
-</p>
+5. To summarize the docker image of verilator contains an environment that is able to compile a simulation by applying sim_main.cpp to top.v
 
 
 ### TODO:  
